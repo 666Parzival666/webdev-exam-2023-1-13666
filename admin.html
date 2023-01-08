@@ -4,9 +4,153 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>Административная панель</title>
 </head>
 <body>
-    
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand " href="#">
+                <img src="img/logo.jpg" width="70" height="50" class="d-inline-block align-top" alt="">
+                Административная панель
+            </a>
+        
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Пользовательская</a>
+                </li>
+                <div class="container-fluid">
+                  <button data-action="create" class="btn btn-modal btn-outline-success" data-bs-toggle="modal" data-bs-target="#add-task-form">Добавить задачу</button>
+              </div>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <main>
+    <h1 class="text-md-center">Оставленные завяки</h1>
+    <div class="container mt-5">
+      <table class="table table-bordered mt-4">
+        <thead>
+          <tr>
+            <th scope="col">№</th>
+            <th scope="col">Название маршрута</th>
+            <th scope="col">Дата</th>
+            <th scope="col">Стоимость</th>
+          </tr>
+        </thead>
+        <tbody class="info"></tbody>
+      </table>
+      <!--<div class="row justify-content-between align-items-center">
+        <nav class="pl-3" aria-label="Page navigation example">
+          <ul class="pagination justify-content-center" id="pg">
+          </ul>
+        </nav>
+      </div> заменить пагинацию, криво-->
+    </div>
+  </main>
+
+  <footer>
+    <div class="text-center" id="contacts">
+      <div class="container mt-5" id="footerContacts">
+        <p class="contact">Компании: ООО "MoscowTur@</p>
+        <p class="contact">E-mail: MoscowTur@bk.com</p>
+        <p class="contact">Номер телефона: +7 (495) 959-59-59</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Modal -->
+  <div class="modal fade" id="add-task-form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Добавление новой задачи</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="container-fluid">
+                    <div class="row mb-3">
+                        <label class="col-md-3 col-form-label" for="task-name">Название задачи</label>
+                        <div class="col-md-9">
+                            <input class="form-control" name="task-name" id="task-name">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-md-3 col-form-label" for="task-desc">Описание задачи</label>
+                        <div class="col-md-9">
+                            <textarea class="form-control" name="task-desc" id="task-desc"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="input-status" class="col-md-3 col-form-label">Статус</label>
+                        <div class="col-md-9">
+                            <select name="task-status" id="input-status" class="form-select">
+                                <option selected>to-do</option>
+                                <option>done</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input type="hidden" name="action">
+                    <input type="hidden" name="task-id">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                <button type="button" class="btn btn-primary" id="create-btn" data-bs-dismiss="modal">Создать</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="removeTaskModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel1">Удаление задачи</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+        <div class="modal-body">
+            <p>Вы уверены, что хотите удалить задачу <span class="taskOnRemove"></span>?</p> <!-- show.bs.modal -->
+            <form><input type="hidden" name="taskID"></form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+            <button type="button" class="btn btn-danger btn-delete" data-bs-dismiss="modal">Удалить</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<template id="task-template">
+  <li class="task list-group-item d-flex justify-content-between">
+      <div class="task-name">a task 1</div>
+      <div class="actions d-none">
+          <i class="bi bi-arrow-left arrow"></i>
+          <i class="bi bi-eye-fill"></i>
+          <i data-action="edit" data-bs-toggle="modal" data-bs-target="#add-task-form" class="bi bi-pencil-fill"></i>
+          <i data-bs-toggle="modal" data-bs-target="#removeTaskModal" class="bi bi-trash-fill"></i>
+          <i class="bi bi-arrow-right arrow"></i>
+      </div>
+  </li>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+<script src="main.js"></script>
+  <!-- Модальное окно просмотра записи -->
+  <!-- модальное окно удаления записи-->
+  <!-- Модальное окно редактирования записи-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+  <!--<script src="static/profile.js">
+  </script>-->
 </body>
 </html>
