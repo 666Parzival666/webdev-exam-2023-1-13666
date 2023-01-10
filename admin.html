@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <title>Административная панель</title>
+    <link rel="stylesheet" href="static/admin.css">
+    <title>Личный кабинет</title>
 </head>
-<body>
+<body class="back">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand " href="#">
                 <img src="img/logo.jpg" width="70" height="50" class="d-inline-block align-top" alt="">
-                Административная панель
+                Личный кабинет
             </a>
         
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -48,18 +49,111 @@
         </nav>
       </div> заменить пагинацию, криво-->
     </div>
-  </main>
-
-  <footer>
-    <div class="text-center" id="contacts">
-      <div class="container mt-5" id="footerContacts">
-        <p class="contact">Компании: ООО "MoscowTur@</p>
-        <p class="contact">E-mail: MoscowTur@bk.com</p>
-        <p class="contact">Номер телефона: +7 (495) 959-59-59</p>
+    <!-- модальное окно удаления записи-->
+    <div class="modal" tabindex="-1" role="dialog" id="delete">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Удаление записи</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body delete-info"></div>
+          <div class="modal-footer delete-button"></div>
+        </div>
       </div>
     </div>
-  </footer>
-  <!-- Modal -->
+    <!-- модальное окно создания записи-->
+    <div class="modal" id="create" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Создание записи</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="" id="create_form">
+              <div class="form-group">
+                <label for="exampleInputPassword1">Наименование</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="name" />
+              </div>
+              <fieldset class="form-group">
+                <legend class="col-form-label col-sm-5 pt-0">
+                  Является сетевым:
+                </legend>
+                <div class="row">
+                  <div class="col-sm-10">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="isNetObject" id="gridRadios1" value="1"
+                        checked />
+                      <label class="form-check-label" for="gridRadios1">
+                        Да
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="isNetObject" id="gridRadios2" value="0" />
+                      <label class="form-check-label" for="gridRadios2">
+                        Нет
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Адрес</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="address"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Число посадочных мест:</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="seatsCount" />
+              </div>
+              <fieldset class="form-group">
+                <legend class="col-form-label col-sm-5 pt-0">
+                  Показатель социальных льгот:
+                </legend>
+                <div class="row">
+                  <div class="col-sm-10">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="socialPrivileges" id="gridRadios3" value="1"
+                        checked />
+                      <label class="form-check-label" for="gridRadios1">
+                        Есть
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="socialPrivileges" id="gridRadios4" value="0" />
+                      <label class="form-check-label" for="gridRadios2">
+                        Нет
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Телефон:</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="publicPhone" />
+              </div>
+              <label for="exampleInputPassword1">Географические координаты:</label>
+              <div class="form-row">
+                <div class="col">
+                  <label for="exampleInputPassword1">Широта:</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1" />
+                </div>
+                <div class="col">
+                  <label for="exampleInputPassword1">Долгота:</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer modal_create"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
   <div class="modal fade" id="add-task-form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
@@ -135,6 +229,136 @@
   </li>
 </template>
 
+    <!-- модальное окно редактирования записи-->
+    <div class="modal" id="edit" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Редактирование записи</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="form_edit" id="editing"></form>
+          </div>
+          <div class="modal-footer modal_edit"></div>
+        </div>
+      </div>
+    </div>
+    <!-- КОНЕЦ -->
+    <!-- ФОРМА -->
+    <div class="container mt-5">
+      <form class="border p-3 rounded" id="filter_form">
+        <div class="form-row">
+          <div class="col-md-7 mb-3">
+            <label for="validationDefault01">Наименование</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault04">Административный округ</label>
+            <select class="custom-select" id="admdis" name="admArea">
+              <option selected value="">Не выбрано...</option>
+            </select>
+          </div>
+        </div>
+        <p>Количество посадочных мест</p>
+        <div class="form-row">
+          <label for="validationDefault04" class="ml-2 mr-3">от</label>
+          <div class="col-md-2 mb-3">
+            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" min="0"
+              name="seatsCount1" />
+          </div>
+          <label for="validationDefault04" class="ml-3 mr-3">до</label>
+          <div class="col-md-2 mb-3">
+            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" min="0"
+              name="seatsCount2" />
+          </div>
+          <div class="col-md-2 mb-3">
+            <select class="custom-select" id="validationDefault04" name="isNetObject" value="">
+              <option selected disabled value="">Является сетевым</option>
+              <option selected value="">Не выбрано</option>
+              <option value="1">Есть</option>
+              <option value="0">Нет</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <select class="custom-select" id="zone" name="district">
+              <option selected disabled value="">Район</option>
+              <option value="">Нет</option>
+            </select>
+          </div>
+        </div>
+        <p>Дата создания</p>
+        <div class="form-row">
+          <label for="validationDefault04" class="ml-2 mr-3">от</label>
+          <div class="col-md-2 mb-3">
+            <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              name="created_at1" />
+          </div>
+          <label for="validationDefault04" class="ml-3 mr-3">до</label>
+          <div class="col-md-2 mb-3">
+            <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              name="created_at2" />
+          </div>
+          <div class="col-md-2 mb-3">
+            <select class="custom-select" id="validationDefault04" name="socialPrivileges" value="">
+              <option selected disabled value="">Льготы</option>
+              <option selected value="">Не выбрано</option>
+              <option value="1">Да</option>
+              <option value="0">Нет</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <select class="custom-select" id="obj" name="typeObject">
+              <option selected disabled value="">Вид объекта</option>
+              <option value="">Нет</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="filter()">
+          Найти
+        </button>
+      </form>
+      <table class="table table-bordered mt-4">
+        <thead>
+          <tr>
+            <th scope="col">Название</th>
+            <th scope="col">Тип</th>
+            <th scope="col">Адрес</th>
+            <th scope="col">Действия</th>
+          </tr>
+        </thead>
+        <tbody class="info"></tbody>
+      </table>
+      <div class="row justify-content-between align-items-center">
+        <nav class="pl-3" aria-label=" Page navigation example">
+          <ul class="pagination justify-content-center" id="pg">
+          </ul>
+        </nav>
+        <button type="button" data-toggle="modal" data-target="#create" class="btn btn-primary mr-3"
+          onclick="create_DATA_API()">
+          Добавить предприятие
+        </button>
+      </div>
+    </div>
+  </main>
+  
+
+  <footer>
+    <div id="contacts">
+      <h1 class="text-md-center">Остаемся всегда на связи!</h1>
+      <h2 style="float: right;">
+          <p class="contact">MoscoeTur — лучшие экскурсии по Москве!</p>
+          <p class="contact">E-mail: MoscowTur@bk.com</p>
+          <p class="contact">Номер телефона: +7 (495) 959-59-59</p>
+      </h2>
+  </div>
+  <div class="container" id="contacts">
+      <span class="sub"><a>© ООО "MoscowTur" </a> 2023</span>
+  </div>
+  </footer>
+  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>

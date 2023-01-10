@@ -1,0 +1,138 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="add-task-form1"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Добавление новой задачи
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form class="container-fluid">
+          <div class="row mb-3">
+            <label class="col-md-3 col-form-label" for="task-name"
+              >Название задачи</label
+            >
+            <div class="col-md-9">
+              <input class="form-control" name="task-name" id="task-name" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label class="col-md-3 col-form-label" for="task-desc"
+              >Описание задачи</label
+            >
+            <div class="col-md-9">
+              <textarea
+                class="form-control"
+                name="task-desc"
+                id="task-desc"
+              ></textarea>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="input-status" class="col-md-3 col-form-label"
+              >Статус</label
+            >
+            <div class="col-md-9">
+              <select name="task-status" id="input-status" class="form-select">
+                <option selected>to-do</option>
+                <option>done</option>
+              </select>
+            </div>
+          </div>
+          <input type="hidden" name="action" />
+          <input type="hidden" name="task-id" />
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Отмена
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          id="create-btn"
+          data-bs-dismiss="modal"
+        >
+          Создать
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="removeTaskModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Удаление задачи</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Вы уверены, что хотите удалить задачу
+          <span class="taskOnRemove"></span>?
+        </p>
+        <!-- show.bs.modal -->
+        <form><input type="hidden" name="taskID" /></form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Отмена
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger btn-delete"
+          data-bs-dismiss="modal"
+        >
+          Удалить
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<template id="task-template">
+  <li class="task list-group-item d-flex justify-content-between">
+    <div class="task-name">a task 1</div>
+    <div class="actions d-none">
+      <i class="bi bi-arrow-left arrow"></i>
+      <i class="bi bi-eye-fill"></i>
+      <i
+        data-action="edit"
+        data-bs-toggle="modal"
+        data-bs-target="#add-task-form1"
+        class="bi bi-pencil-fill"
+      ></i>
+      <i
+        data-bs-toggle="modal"
+        data-bs-target="#removeTaskModal"
+        class="bi bi-trash-fill"
+      ></i>
+      <i class="bi bi-arrow-right arrow"></i>
+    </div>
+  </li>
+</template>
