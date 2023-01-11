@@ -1,6 +1,7 @@
 let UUID = "?api_key=cfaebacb-7240-41af-9d68-b704ddb0f4fd";  
-let TOUR_API = "http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/routes?api_key=cfaebacb-7240-41af-9d68-b704ddb0f4fd";
-let GUIDE_API = "http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/routes/"
+let TOUR_API = "https://edu.std-900.ist.mospolytech.ru/api/routes?api_key=cfaebacb-7240-41af-9d68-b704ddb0f4fd";
+let GUIDE_API = "https://edu.std-900.ist.mospolytech.ru/api/routes/"
+let ORDERS_API = "https://edu.std-900.ist.mospolytech.ru/api/orders/"
 
 function pagination(querySet, page, rows) {
 	var trimStart = (page - 1) * rows;
@@ -101,7 +102,7 @@ var state2 = {
 								<td>${myList[key].workExperience} лет</td>
 								<td>${myList[key].pricePerHour} рублей</td>
 								<td>
-								<button type="button" class="btn btn-light btn-guides" onclick = "selectGuide(this, ${myList[key].id})" selected = "false">Выбрать</button>
+								<button type="button" class="btn btn-primary btn-guides" onclick = "selectGuide(this, ${myList[key].id})" selected = "false">Выбрать</button>
 								</td>
 							</tr>`;
 			}
@@ -162,20 +163,27 @@ window.onload = function () {
 	state1.get_API();
 };
 
+guideName = document.querySelector("#guideName")
+routeName = document.querySelector("#routeName")
+SC = document.querySelector(".checkboxSC")
+TS = document.querySelector(".checkboxTS")
+dataInput = document.querySelector(".dataInput")
+timeInput = document.querySelector(".timeInput")
+total = document.querySelector(".total-summary").innerHTML
+console.log(total)
+duration = document.querySelector("#duration")
+peopleAmount = document.querySelector("#peopleAmount")
 function makeRequest(){
-	guideName = document.querySelector("#guideName");
-	routeName = document.querySelector("#routeName");
-	SC = document.querySelector(".checkboxSC")
-	TS = document.querySelector(".checkboxTS")
-	dataInput = document.querySelector('input[type="date"]');
-	console.log(dataInput.value)
+	isItMorning = false
+	isItEvening = false
 	console.log(routeName)
 	for (var i = 0; i < state2.querySet.length; i++) {
 		if (state2.querySet[i]["id"] == state2.selected) {
 			console.log(state2.querySet[i]["id"])
 			console.log(state2.selected)
 			guideName.innerHTML = state2.querySet[i].name
-			console.log(state2.querySet[i].name)
+			total = state2.querySet[i].pricePerHour
+			console.log(total)
 			break;
 		}
 	}
@@ -184,13 +192,61 @@ function makeRequest(){
 			console.log(state1.querySet[i]["id"])
 			console.log(state1.selected)
 			routeName.innerHTML = state1.querySet[i].name
-			console.log(state1.querySet[i].name)
 			break;
 		}
 	}
+	// while(true){
+	// 	timeInput.addEventListener("input", () => {
+	// 		if(timeInput.value.slice(0,2) <= 12){
 
+	// 		}
+	// 		else if(timeInput.value.slice(0,2) >= 20){
+	// 			isItMorning = false
+	// 			isItEvening = true
+	// 		}
+	// 		else{
+	// 			isItMorning = false
+	// 			isItEvening = false
+	// 		}
+	// 	}, false);
+	// 	if(peopleAmount.value <= 5){
+	// 		total += 0
+	// 	}
+	// 	else if(10 > peopleAmount.value > 5){
+	// 		total += 1000
+	// 	}
+	// 	else if(peopleAmount > 10 ){
+	// 		total += 1500
+	// 	}
+	// 	if(SC.checked){
+	// 		total /= 4
+	// 		total *= 3
+	// 	}
+	// 	else if(TS.checked){
+	// 		total += 500 * peopleAmount.value
+	// 	}
+	// }
 }
 
 function saveRequest(){
-
+	var data = new FormData();
+	data.append('date', dataInput.value);
+	data.append('duration', duration.selectedIndex + 1);
+	data.append('guide_id', 'place');
+	data.append('id', 'key');
+	data.append('optionFirst', 'person');
+	data.append('optionSecond', 'password');
+	data.append('persons', 'place');
+	data.append('price', 'key');
+	data.append('route_id', 'person');
+	data.append('student_id', 'password');
+	data.append('time', 'place');
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", TOUR_API, false); 
+	xhr.send();
+	if (xhr.status != 200) {
+		alert(xhr.status + ": " + xhr.statusText);
+	} else {
+		return JSON.parse(xhr.responseText);
+	}
 }
