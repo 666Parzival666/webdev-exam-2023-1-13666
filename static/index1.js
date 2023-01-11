@@ -55,6 +55,7 @@ var state1 = {
 	window: 5,
     table: ".route_choose_fill",
 	stateWrapper: "pge",
+	selected: 0,
 	get_API:
 		function get_tour_API() {
 			var data = pagination(state1.querySet, state1.page, state1.rows);
@@ -66,9 +67,10 @@ var state1 = {
 				list.innerHTML += `<tr>
 								<th scope="row">${myList[key].id-1}</th>
 								<td>${myList[key].name}</td>
+								<td>${myList[key].description}</td>
 								<td>${myList[key].mainObject}</td>
 								<td>
-								<button type="button" class="btn btn-primary btn-light" onclick="select_draw(this, ${myList[key].id})" >Выбрать</button>
+								<button type="button" class="btn btn-light btn-tour" onclick="select_draw(this, ${myList[key].id})" >Выбрать</button>
 								</td>
 							</tr>`;
 			}
@@ -83,6 +85,7 @@ var state2 = {
 	window: 5,
     table: ".guide_choose_fill",
 	stateWrapper: "pge-guides",
+	selected: 0,
 	get_API: 
 		function get_guide_API() {
 			var data = pagination(state2.querySet, state2.page, state2.rows);
@@ -98,7 +101,7 @@ var state2 = {
 								<td>${myList[key].workExperience} лет</td>
 								<td>${myList[key].pricePerHour} рублей</td>
 								<td>
-								<button type="button" class="btn btn-light btn-guides" onclick = "selectGuide(this)" selected = "false">Выбрать</button>
+								<button type="button" class="btn btn-light btn-guides" onclick = "selectGuide(this, ${myList[key].id})" selected = "false">Выбрать</button>
 								</td>
 							</tr>`;
 			}
@@ -136,25 +139,58 @@ function select_draw(el, id){
 		all[i].innerHTML = "Выбрать"
 	}
 	el.innerHTML = "Выбрано!"
-	el.setAttribute("selected", "true");
     let tourName = document.querySelector("#tour-name")
     for (var i = 0; i < tour.length; i++) {
 		if (tour[i]["id"] == id) {
 			tourName.innerHTML = " " + tour[i].name;
             state2.querySet = get_guides(id);
+			state1.selected = id;
 			state2.get_API();
 			break;
 		}
 	}
 }
-function selectGuide(el){
+function selectGuide(el, id){
 	let all = document.querySelectorAll(".btn-guides");
 	for(let i = 0; i < all.length; i++){
 		all[i].innerHTML = "Выбрать"
 	}
 	el.innerHTML = "Выбрано!"
-	el.setAttribute("selected", "true");
+	state2.selected = id;
 }
 window.onload = function () {
 	state1.get_API();
 };
+
+function makeRequest(){
+	guideName = document.querySelector("#guideName");
+	routeName = document.querySelector("#routeName");
+	SC = document.querySelector(".checkboxSC")
+	TS = document.querySelector(".checkboxTS")
+	dataInput = document.querySelector('input[type="date"]');
+	console.log(dataInput.value)
+	console.log(routeName)
+	for (var i = 0; i < state2.querySet.length; i++) {
+		if (state2.querySet[i]["id"] == state2.selected) {
+			console.log(state2.querySet[i]["id"])
+			console.log(state2.selected)
+			guideName.innerHTML = state2.querySet[i].name
+			console.log(state2.querySet[i].name)
+			break;
+		}
+	}
+	for (var i = 0; i < state1.querySet.length; i++) {
+		if (state1.querySet[i]["id"] == state1.selected) {
+			console.log(state1.querySet[i]["id"])
+			console.log(state1.selected)
+			routeName.innerHTML = state1.querySet[i].name
+			console.log(state1.querySet[i].name)
+			break;
+		}
+	}
+
+}
+
+function saveRequest(){
+
+}
