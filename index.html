@@ -98,7 +98,7 @@
 
   <section id="about">
     <div class="container-fluid my-2 text-center">
-      <h1 class="text-md-center" id="about">Почему именно мы?</h1>
+      <h1 class="text-md-center">Почему именно мы?</h1>
       <div class="container align-center p-5">
         <div class="row text-right">
           <div class="col-md-4 col-md-offset-3">
@@ -202,7 +202,6 @@
           </button>
         </div>
       </div>
-      </form>
     </div>
   </section>
 
@@ -220,13 +219,13 @@
             <div class="row mb-3">
               <label class="col-md-3 col-form-label text-white" for="task-name">Гид</label>
               <div class="col-md-9">
-                <p name="task-name" id="guideName" class="text-white"></p>
+                <a name="task-name" id="guideName" class="text-white"></a>
               </div>
             </div>
             <div class="row mb-3">
               <label class="col-md-3 col-form-label text-white" for="task-desc">Маршрут</label>
               <div class="col-md-9">
-                <p name="task-desc" id="routeName" class="text-white"></p>
+                <a name="task-desc" id="routeName" class="text-white"></a>
               </div>
             </div>
             <div class="row mb-3">
@@ -252,16 +251,44 @@
                   <option value="3">3 часа</option>
                 </select>
               </div>
-              <label for="input-status" class="col-md-3 col-form-label text-white">Скидка для пенсионеров</label>
-              <div class="col-md-9">
-                <input type="checkbox" name="checkbox" id="input-status" class="checkboxSC" />
-                <p class="col-md-3 col-form-label text-white">(Стоимость уменьшается на 25%)</p>
-              </div>
-              <label for="input-status" class="col-md-3 col-form-label text-white">Тематические сувениры</label>
-              <div class="col-md-9">
-                <input type="checkbox" name="checkbox" id="input-status" class="checkboxTS" />
-                <p class="col-md-3 col-form-label text-white">(Стоимость увеличивается на 500 рублей для каждого
-                  посетителя)</p>
+              <div class="container mt-3">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th><label for="input-status" class="col-md-3 col-form-label text-white">Дополнительная
+                          услуга</label></th>
+                      <th><label for="input-status" class="col-md-3 col-form-label text-white">Описание</label></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label for="input-status" class="col-md-3 col-form-label text-white">Скидка для
+                          пенсионеров</label>
+                      </td>
+                      <td>
+                        <div class="col-md-9">
+                          <input type="checkbox" name="checkbox" id="input-status" class="checkboxSC" />
+                          <p class="col-md-3 col-form-label text-white">(Стоимость уменьшается на 25%)</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label for="input-status" class="col-md-3 col-form-label text-white">Тематические
+                          сувениры</label>
+                      </td>
+                      <td>
+                        <div class="col-md-9">
+                          <input type="checkbox" name="checkbox" id="input-status" class="checkboxTS" />
+                          <p class="col-md-3 col-form-label text-white">(Стоимость увеличивается на 500 рублей для
+                            каждого
+                            посетителя)</p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
               <label for="input-status" class="col-md-3 col-form-label text-white">Итоговая стоимость:<span
                   class="total-summary"></span></label>
