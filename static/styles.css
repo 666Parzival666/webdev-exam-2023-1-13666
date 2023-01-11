@@ -14,13 +14,14 @@ li a:hover {
     color: #FFFFFF;
 }
 
-h1{
+h1 {
     font-family: "Comic Sans MS";
     background-color: #FB607F;
     padding-top: 8px;
     padding-bottom: 8px;
 }
-h2{
+
+h2 {
     font-family: "Comic Sans MS";
 }
 
@@ -28,20 +29,21 @@ h3 {
     font-family: "Comic Sans MS";
 }
 
-p{
+p {
     font-family: "Comic Sans MS";
     font-size: 30px;
 }
-.contact{
+
+.contact {
     font-family: "Comic Sans MS";
     font-size: 15px;
 }
 
-.back{
+.back {
     background-color: #fbb8c5;
 }
 
-.modal-body{
+.modal-body {
     background-color: #c51d34;
     font-family: "Comic Sans MS";
 }
