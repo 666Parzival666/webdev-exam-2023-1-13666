@@ -31,15 +31,15 @@ function pageButtons(stateWrapper, pages, state) {
 		maxRight = pages;
 	}
 	for (var page = maxLeft; page <= maxRight; page++) {
-		wrapper.innerHTML += `<button value=${page} class="page btn btn-sm btn-info">${page}</button>`;
+		wrapper.innerHTML += `<button value=${page} class="page btn btn-sm btn-light">${page}</button>`;
 	}
 	if (state.page != 1) {
 		wrapper.innerHTML =
-			`<button value=${1} class="page btn btn-sm btn-info">&#171; First</button>` +
+			`<button value=${1} class="page btn btn-sm btn-light">&#171; First</button>` +
 			wrapper.innerHTML;
 	}
 	if (state.page != pages) {
-		wrapper.innerHTML += `<button value=${pages} class="page btn btn-sm btn-info">Last &#187;</button>`;
+		wrapper.innerHTML += `<button value=${pages} class="page btn btn-sm btn-light">Last &#187;</button>`;
 	}
 	// ОЧИСТКА СТРАНИЦЫ ПЕРЕД СЛЕДУЮЩИМ ПЕРЕХОДОМ
 	$(".page").on("click", function () {
@@ -68,7 +68,7 @@ var state1 = {
 								<td>${myList[key].name}</td>
 								<td>${myList[key].mainObject}</td>
 								<td>
-								<button type="button" class="btn btn-primary btn-tour" onclick="select_draw(this, ${myList[key].id})" >Выбрать</button>
+								<button type="button" class="btn btn-primary btn-light" onclick="select_draw(this, ${myList[key].id})" >Выбрать</button>
 								</td>
 							</tr>`;
 			}
@@ -98,7 +98,7 @@ var state2 = {
 								<td>${myList[key].workExperience} лет</td>
 								<td>${myList[key].pricePerHour} рублей</td>
 								<td>
-								<button type="button" class="btn btn-primary btn-guides" onclick = "selectGuide(this)" selected = "false">Выбрать</button>
+								<button type="button" class="btn btn-light btn-guides" onclick = "selectGuide(this)" selected = "false">Выбрать</button>
 								</td>
 							</tr>`;
 			}

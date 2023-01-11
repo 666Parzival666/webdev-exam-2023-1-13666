@@ -1,401 +1,303 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="static/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
-    />
-    <title>Экзаменационная работа</title>
-  </head>
-  <body class="back">
-    <!--Навигационная панелька-->
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          <img
-            src="img/logo.jpg"
-            width="70"
-            height="50"
-            class="d-inline-block align-top"
-            alt=""
-          />MoscowTur</a
-        >
 
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarSupportedContent"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Главная страница</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">О нас</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#find">Поиск</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#order">Заказ</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contacts">Контакты</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="admin.html">Личный кабинет</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="static/styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
+  <title>Экзаменационная работа</title>
+</head>
 
-    <!--  Карусель -->
-    <div
-      id="carouselExampleCaptions"
-      class="carousel slide col-md-7 mx-auto m-3"
-      data-ride="carousel"
-    >
-      <ol class="carousel-indicators">
-        <li
-          data-target="#carouselExampleCaptions"
-          data-slide-to="0"
-          class="active"
-        ></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="img/carousel2.jpeg" class="d-block w-100" alt="..." />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Вы можете увидеть</h5>
-            <p>Нескучный сад</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="img/carousel3.jpg" class="d-block w-100" alt="..." />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Вы можете увидеть</h5>
-            <p>Арбат</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="img/carousel1.jpg" class="d-block w-100" alt="..." />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Вы можете увидеть</h5>
-            <p>Воробьевы горы</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="img/carousel4.jpg" class="d-block w-100" alt="..." />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Вы можете увидеть</h5>
-            <p>Зоопарк</p>
-          </div>
-        </div>
+<body class="back">
+  <!--Навигационная панелька-->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="img/logo.jpg" width="70" height="50" class="d-inline-block align-top" alt="" />MoscowTur</a>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Главная страница</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">О нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#find">Поиск</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#order">Заказ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacts">Контакты</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="admin.html">Личный кабинет</a>
+          </li>
+        </ul>
       </div>
-      <a
-        class="carousel-control-prev"
-        href="#carouselExampleCaptions"
-        role="button"
-        data-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a
-        class="carousel-control-next"
-        href="#carouselExampleCaptions"
-        role="button"
-        data-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+    </nav>
+  </header>
+
+  <!-- Carousel -->
+  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
     </div>
 
-    <section id="about">
-      <div class="container my-2 text-center">
-        <h1 class="text-md-center" id="about">Почему именно мы?</h1>
-        <div class="container align-center p-5">
-          <div class="row text-right">
-            <div class="col-md-4 col-md-offset-3">
-              <img src="img/интерес.png" width="300" alt="" />
-              <p>Интересные экскурсии</p>
-            </div>
-            <div class="col-md-4 col-md-offset-3">
-              <img src="img/профф.png" width="300" alt="" />
-              <p>Работаем с профессионалами</p>
-            </div>
-            <div class="col-md-4 col-md-offset-3">
-              <img src="img/подход.png" width="300" alt="" />
-              <p>Индивидуальный подход к каждой группе</p>
-            </div>
-            <div class="col-md-4 col-md-offset-3">
-              <img src="img/скидки.png" width="300" alt="" />
-              <p>Скидка пенсионерам</p>
-            </div>
-            <div class="col-md-4 col-md-offset-3">
-              <img src="img/трансфер.png" width="300" alt="" />
-              <p>Трансфер до ближайшего метро</p>
-            </div>
-            <div class="col-md-4 col-md-offset-3">
-              <img src="img/новое.png" width="300" alt="" />
-              <p>Каждый узнает о нащей чтолице что-то новое</p>
-            </div>
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/carousel2.jpeg" alt="Los Angeles" class="d-block" style="width:100%">
+        <div class="carousel-caption text-white">
+          <h5>Вы можете увидеть</h5>
+          <p>Нескучный сад</p>
+        </div>
+      </div>
+      <div class="carousel-item active">
+        <img src="img/carousel3.jpg" alt="Los Angeles" class="d-block" style="width:100%">
+        <div class="carousel-caption text-black">
+          <h5>Вы можете увидеть</h5>
+          <p>Арбат</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/carousel1.jpg" alt="Chicago" class="d-block" style="width:100%">
+        <div class="carousel-caption text-white">
+          <h5>Вы можете увидеть</h5>
+          <p>Воробьевы горы</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/carousel4.jpg" alt="New York" class="d-block" style="width:100%">
+        <div class="carousel-caption text-white">
+          <h5>Вы можете увидеть</h5>
+          <p>Зоопарк</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <section id="about">
+    <div class="container-fluid my-2 text-center">
+      <h1 class="text-md-center" id="about">Почему именно мы?</h1>
+      <div class="container align-center p-5">
+        <div class="row text-right">
+          <div class="col-md-4 col-md-offset-3">
+            <img src="img/интерес.png" width="300" alt="" />
+            <p>Интересные экскурсии</p>
+          </div>
+          <div class="col-md-4 col-md-offset-3">
+            <img src="img/профф.png" width="300" alt="" />
+            <p>Работаем с профессионалами</p>
+          </div>
+          <div class="col-md-4 col-md-offset-3">
+            <img src="img/подход.png" width="300" alt="" />
+            <p>Индивидуальный подход к каждой группе</p>
+          </div>
+          <div class="col-md-4 col-md-offset-3">
+            <img src="img/скидки.png" width="300" alt="" />
+            <p>Скидка пенсионерам</p>
+          </div>
+          <div class="col-md-4 col-md-offset-3">
+            <img src="img/сувениры.png" width="300" alt="" />
+            <p>Тематические сувениры</p>
+          </div>
+          <div class="col-md-4 col-md-offset-3">
+            <img src="img/новое.png" width="300" alt="" />
+            <p>Каждый узнает о нащей чтолице что-то новое</p>
           </div>
         </div>
       </div>
-    </section>
-    <hr>
-    <section id="find">
-      <h1 class="text-md-center">Список пешеходных маршрутов</h1>
-      <div class="container mt-5">
-        <form class="border p-3 rounded" id="filter_form">
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="searchField1">Поиск по объекту</label>
-              <input
-                type="search"
-                class="form-control"
-                placeholder="Введите название"
-                name="src1"
-                id="searchField1"
-              />
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="adm05">Основной объект</label>
-              <select
-                class="custom-select"
-                name="custom_object"
-                id="customObject"
-                required
-              >
-                <option selected value="">Не выбрано...</option>
-                <option value="001">001</option>
-              </select>
-            </div>
+    </div>
+  </section>
+
+  <section id="find">
+    <h1 class="text-md-center">Список пешеходных маршрутов</h1>
+    <div class="container mt-5">
+      <form class="border p-3 rounded" id="filter_form">
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="searchField1">Поиск по объекту</label>
+            <input type="search" class="form-control" placeholder="Введите название" name="src1" id="searchField1"
+              required />
           </div>
-          <button class="btn btn-primary" type="button">Найти</button>
-        </form>
-        <div class="container mt-5">
+          <div class="col-md-6 mb-3">
+            <label for="adm05">Основной объект</label>
+            <select class="custom-select" name="custom_object" id="customObject" required>
+              <option selected value="">Не выбрано...</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-light" type="submit">Найти</button>
+      </form>
+      <div class="container mt-5">
+        <table class="table table-bordered mt-4">
+          <thead>
+            <tr>
+              <th scope="col">№</th>
+              <th scope="col">Название маршрута</th>
+              <th scope="col">Основные объекты</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="route_choose_fill"></tbody>
+        </table>
+      </div>
+      <nav class="pl-3" aria-label="Page navigation example">
+        <ul class="pagination justify-content-center" id="pge"></ul>
+      </nav>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <h3>Доступные гиды по маршруту<span id="tour-name"></span></h3>
+        <div class="container-fluid">
+        </div>
+        <div class="container">
           <table class="table table-bordered mt-4">
             <thead>
               <tr>
                 <th scope="col">№</th>
-                <th scope="col">Название маршрута</th>
-                <th scope="col">Основные объекты</th>
+                <th scope="col">ФИО</th>
+                <th scope="col">Языки</th>
+                <th scope="col">Опыт работы</th>
+                <th scope="col">Стоимость услуг в час</th>
                 <th scope="col"></th>
               </tr>
             </thead>
-            <tbody class="route_choose_fill"></tbody>
+            <tbody class="guide_choose_fill"></tbody>
           </table>
         </div>
-        <nav class="pl-3" aria-label="Page navigation example">
-          <ul class="pagination justify-content-center" id="pge"></ul>
-        </nav>
       </div>
-    </section>
-    <!--Доступные гиды по маршруту
-    Привести к виду в шаблоне-->
-    <!-- XXX -->
-    <section id="order">
-      <div class="container mt-5">
-        <div class="row justify-content-start">
-          <h3>Доступные гиды по маршруту<span id="tour-name"></span></h3>
-          <div class="container">
-            <table class="table table-bordered mt-4">
-              <thead>
-                <tr>
-                  <th scope="col">№</th>
-                  <th scope="col">ФИО</th>
-                  <th scope="col">Языки</th>
-                  <th scope="col">Опыт работы</th>
-                  <th scope="col">Стоимость услуг в час</th>
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody class="guide_choose_fill"></tbody>
-            </table>
-          </div>
+      <nav class="pl-3" aria-label="Page navigation example">
+        <ul class="pagination justify-content-center" id="pge-guides"></ul>
+      </nav>
+      <div class="row justify-content-around mt-3 flex-wrap">
+        <div class="makeReqButton">
+          <button data-action="create" class="btn btn-modal btn-outline-success" data-bs-toggle="modal"
+            data-bs-target="#add-task-form1">
+            Оформить заявку
+          </button>
         </div>
-        <nav class="pl-3" aria-label="Page navigation example">
-          <ul class="pagination justify-content-center" id="pge-guides"></ul>
-        </nav>
-        <div class="row justify-content-around mt-3 flex-wrap">
-            <div class="makeReqButton">
-              <button
-                data-action="create"
-                class="btn btn-modal btn-outline-success"
-                data-bs-toggle="modal"
-                data-bs-target="#add-task-form1"
-              >
-                Оформить заявку
-              </button>
-            </div>
-          </div>
-        </form>
       </div>
-    </section>
+      </form>
+    </div>
+  </section>
 
-    <div
-  class="modal fade"
-  id="add-task-form1"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-header" style="background-color: #c51d34">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">
-          Оформление заявки
-        </h1>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <form class="container-fluid">
-          <div class="row mb-3">
-            <label class="col-md-3 col-form-label" for="task-name"
-              >Гид</label
-            >
-            <div class="col-md-9">
-              <h1 class="form-control" name="task-name" id="task-name"></h1>
+  <div class="modal fade" id="add-task-form1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #c51d34">
+          <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">
+            Оформление заявки
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="container-fluid">
+            <div class="row mb-3">
+              <label class="col-md-3 col-form-label text-white" for="task-name">Гид</label>
+              <div class="col-md-9">
+                <h1 class="form-control" name="task-name" id="task-name"></h1>
+              </div>
             </div>
-          </div>
-          <div class="row mb-3">
-            <label class="col-md-3 col-form-label" for="task-desc"
-              >Маршрут</label
-            >
-            <div class="col-md-9">
-              <h1
-                class="form-control"
-                name="task-desc"
-                id="task-desc"
-              ></h1>
+            <div class="row mb-3">
+              <label class="col-md-3 col-form-label text-white" for="task-desc">Маршрут</label>
+              <div class="col-md-9">
+                <h1 class="form-control" name="task-desc" id="task-desc"></h1>
+              </div>
             </div>
-          </div>
-          <div class="row mb-3">
-            <label for="input-status" class="col-md-3 col-form-label"
-              >Дата</label>
-            <div class="col-md-9">
-              <input type="calendar" name="calendar" id="input-status" class="form-select"/>
+            <div class="row mb-3">
+              <label for="input-status" class="col-md-3 col-form-label text-white">Дата</label>
+              <div class="col-md-9">
+                <input type="calendar" name="calendar" id="input-status" />
+              </div>
+              <label for="input-status" class="col-md-3 col-form-label text-white">Колличество человек</label>
+              <div class="col-md-9">
+                <input type="number" name="time" id="input-status" min="1" max="20"/>
+              </div>
+              <label for="input-status" class="col-md-3 col-form-label text-white">Время</label>
+              <div class="col-md-9">
+                <input type="time" name="time" id="input-status " />
+              </div>
+              <label for="input-status" class="col-md-3 col-form-label text-white">Длительность</label>
+              <div class="col-md-9">
+                <select name="duration" id="input-status">
+                  <option selected value="1">1 часа</option>
+                  <option value="2">2 часа</option>
+                  <option value="3">3 часа</option>
+                </select>
+              </div>
+              <label for="input-status" class="col-md-3 col-form-label text-white">Скидка для пенсионеров</label>
+              <div class="col-md-9">
+                <input type="checkbox" name="checkbox" id="input-status" />
+                <p class="col-md-3 col-form-label text-white">(Стоимость уменьшается на 25%)</p>
+              </div>
+              <label for="input-status" class="col-md-3 col-form-label text-white">Тематические сувениры</label>
+              <div class="col-md-9">
+                <input type="checkbox" name="checkbox" id="input-status" class="checkboxTS" />
+                <p class="col-md-3 col-form-label text-white">(Стоимость увеличивается на 500 рублей для каждого
+                  посетителя)</p>
+              </div>
+              <label for="input-status" class="col-md-3 col-form-label text-white">Итоговая стоимость:</label>
             </div>
-            <label for="input-status" class="col-md-3 col-form-label"
-              >Время</label>
-            <div class="col-md-9">
-              <input type="time" name="time" id="input-status" class="form-select"/>
-            </div>
-            <label for="input-status" class="col-md-3 col-form-label"
-              >Длительность</label>
-            <div class="col-md-9">
-              <select name="duration" id="input-status" class="form-select">
-                <option selected value="1">1 часа</option>
-                <option value="2">2 часа</option>
-                <option value="3">3 часа</option>
-              </select>
-            </div>
-            <label for="input-status" class="col-md-3 col-form-label"
-              >Скидка для школьников и студентов.</label>
-            <div class="col-md-9">
-              <input type="checkbox" name="checkbox" id="input-status" class="form-select"/>
-            </div>
-            <label for="input-status" class="col-md-3 col-form-label"
-              >Скидка для пенсионеров</label>
-            <div class="col-md-9">
-              <input type="checkbox" name="checkbox" id="input-status" class="form-select"/>
-            </div>
-            <label for="input-status" class="col-md-3 col-form-label"
-              >Быстрый выезд гида</label>
-            <div class="col-md-9">
-              <input type="checkbox" name="checkbox" id="input-status" class="form-select"/>
-            </div>
-            <label for="input-status" class="col-md-3 col-form-label"
-              >Легкие закуски и горячие напитки во время экскурсии</label>
-            <div class="col-md-9">
-              <input type="checkbox" name="checkbox" id="input-status" class="form-select"/>
-            </div>
-            <label for="input-status" class="col-md-3 col-form-label"
-              >Тематические сувениры</label>
-            <div class="col-md-9">
-              <input type="checkbox" name="checkbox" id="input-status" class="form-select"/>
-            </div>
-            <label for="input-status" class="col-md-3 col-form-label"
-              >Трансфер до ближайших станций метро после экскурсии</label>
-            <div class="col-md-9">
-              <input type="checkbox" name="checkbox" id="input-status" class="form-select"/>
-            </div>
-            <label for="input-status" class="col-md-3 col-form-label"
-              >Интерактивный путеводитель</label>
-            <div class="col-md-9">
-              <input type="checkbox" name="checkbox" id="input-status" class="form-select"/>
-            </div>
-            <label for="input-status" class="col-md-3 col-form-label"
-              >Сопровождение сурдопереводчика</label>
-            <div class="col-md-9">
-              <input type="checkbox" name="checkbox" id="input-status" class="form-select"/>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer" style="background-color: #c51d34">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Отмена
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary"
-          id="create-btn"
-          data-bs-dismiss="modal"
-        >
-          Создать
-        </button>
+          </form>
+        </div>
+        <div class="modal-footer" style="background-color: #c51d34">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Отмена
+          </button>
+          <button type="button" class="btn btn-primary" id="create-btn" data-bs-dismiss="modal">
+            Создать
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-    
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
 
-    <script src="static/index1.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-  <footer>
-    <div id="contacts">
-      <h1 class="text-md-center">Остаемся всегда на связи!</h1>
-      <h2 style="float: right">
-        <p class="contact">MoscowTur — лучшие экскурсии по Москве!</p>
-        <p class="contact">E-mail: MoscowTur@bk.com</p>
-        <p class="contact">Номер телефона: +7 (495) 959-59-59</p>
-      </h2>
-    </div>
-    <div class="container" id="contacts">
-      <span class="sub"><a>© ООО "MoscowTur" </a> 2023</span>
-    </div>
-  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
+  <script src="static/index1.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+</body>
+<footer>
+  <div id="contacts">
+    <h1 class="text-md-center">Остаемся всегда на связи!</h1>
+    <h2 style="float: right">
+      <p class="contact">MoscowTur — лучшие экскурсии по Москве!</p>
+      <p class="contact">E-mail: MoscowTur@bk.com</p>
+      <p class="contact">Номер телефона: +7 (495) 959-59-59</p>
+    </h2>
+  </div>
+  <div class="container" id="contacts">
+    <span class="sub"><a>© ООО "MoscowTur" </a> 2023</span>
+  </div>
+</footer>
+
 </html>
