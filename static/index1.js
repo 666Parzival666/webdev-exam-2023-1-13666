@@ -102,7 +102,7 @@ var state2 = {
 								<td>${myList[key].workExperience} лет</td>
 								<td>${myList[key].pricePerHour} рублей</td>
 								<td>
-								<button type="button" class="btn btn-primary btn-guides" onclick = "selectGuide(this, ${myList[key].id})" selected = "false">Выбрать</button>
+								<button type="button" class="btn btn-light btn-guides" onclick = "selectGuide(this, ${myList[key].id})" selected = "false">Выбрать</button>
 								</td>
 							</tr>`;
 			}
