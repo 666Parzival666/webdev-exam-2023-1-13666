@@ -11,3 +11,8 @@ h2{
 .back{
     background-color: #fbb8c5;
 }
+
+.modal-body {
+    background-color: #c51d34;
+    font-family: "Comic Sans MS";
+}
